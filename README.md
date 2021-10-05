@@ -7,7 +7,7 @@
 5. use curl, postman or other tools to send http requests to test the app
 
 ## How to run documentations
-1. use your browser and type `http://localhost:3000/api/docs`
+1. go to your browser and type `http://localhost:3000/api/docs`
 
 ### How to use CLI?
 
