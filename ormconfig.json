@@ -1,0 +1,24 @@
+{
+  "type": "mysql",
+  "host": "qz8si2yulh3i7gl3.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+  "port": 3306,
+  "username": "yw99mjsviiyniwwd",
+  "password": "x4fx0bqb3820h3xe",
+  "database": "wpfc9bpuz0xksji3",
+  "synchronize": true,
+  "logging": false,
+  "entities": [
+    "dist/entity/*.js"
+  ],
+  "subscribers": [
+    "dist/subscriber/*.js"
+  ],
+  "migrations": [
+    "dist/migration/*.js"
+  ],
+  "cli": {
+    "entitiesDir": "src/entity",
+    "migrationsDir": "src/migration",
+    "subscribersDir": "src/subscriber"
+  }
+}
