@@ -1,244 +1,236 @@
 {
-    "swagger": "2.0",
-    "info": {
-        "description": "This is a simple Swagger Documentation",
-        "version": "1.0.0",
-        "title": "Decagon  test",
-        "contact": {
-            "email": "decagon@gmail.com"
-        },
-        "license": {
-            "name": "Apache 2.0",
-            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
-        }
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a simple Swagger Documentation",
+    "version": "1.0.0",
+    "title": "Decagon  test",
+    "contact": {
+      "email": "decagon@gmail.com"
     },
-    "schemes": ["http"],
-    "host": "localhost:3002",
-    "basePath": "/api",
-    "paths" : {
-        "/register" : {
-            "post" : {
-                "summary" : "register a new user",
-                "description": "register a new user",
-                "produces": ["application/json"],
-                "parameters": [{
-                    "in": "body",
-                    "name": "body",
-                    "description": "task object",
-                    "required": true,
-                    "schema": {
-                        "type": "object",
-                        "$ref": "#/definitions/register"
-                    }
-                }],
-                "responses": {
-                    "201": {
-                        "description": "successful operation",
-                        "schema": {
-                            "type": "object",
-                            
-                                "$ref": "#/definitions/registerResponse"
-                            
-                        }
-                    },
-                    "403": {
-                        "description": "Invalid status value",
-                        "schema": {
-                            "$ref": "#/definitions/InvalidResponse"
-                        }
-                    }
-                }
-            }
-        },
-        "/login" : {
-            "post" : {
-                "summary" : "login user",
-                "description": "login user",
-                "produces": ["application/json"],
-                "consumes": ["application/json"],
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "login object",
-                        "required": true,
-                        "schema": {
-                            "type": "object",
-                            "$ref": "#/definitions/login"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "successful operation",
-                        "schema": {
-                            "type": "object",
-                            
-                                "$ref": "#/definitions/loginResponse"
-                            
-                        }
-                    },
-                    "403": {
-                        "description": "Invalid status value",
-                        "schema": {
-                            "$ref": "#/definitions/InvalidResponse"
-                        }
-                    }
-                }
-            }
-        },
-        "/countries" : {
-            "put" : {
-                "summary" : "Get countries",
-                "description": "Get countries",
-                "produces": ["application/json"],
-                "responses": {
-                    "200": {
-                        "description": "successful operation",
-                        "schema": {
-                            "type": "array",
-                            "$ref": "#/definitions/countriesResponse"
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid status value",
-                        "schema": {
-                            "$ref": "#/definitions/InvalidResponse"
-                        }
-                    }
-                }
-            }
-        }
-       
-    }, 
-    "definitions": {
-    
-        "InvalidResponse": {
-            "type": "object",
-            "properties": {
-                "data": {
-                    "type": "string",
-                    "nullable":"true"
-                },
-                "error": {
-                    "type": "boolean"
-                },
-                "message":{
-                    "type":"string"
-                }
-            }
-
-        },
-        "register":{
-            "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "email": {
-                    "type": "string"
-                },
-                "password": {
-                    "type": "string"
-                }
-
-            }
-        },
-        "registerResponse":{
-            "type": "object",
-            "properties": {
-                "data": {
-                    "type": "object",
-                    "properties":{
-                        "id":{
-                            "type":"integer"
-                        },
-                        "name":{
-                            "type":"string"
-                        },
-                        "created_at":{
-                            "type":"string"
-                        },
-                        "updated_at":{
-                            "type":"string"
-                        }
-                    }
-                },
-                "error":{
-                 "type":"boolean"
-                },
-                "message": {
-                    "type": "string"
-                }
-            }
-        },
-        "login":{
-            "type": "object",
-            "properties": {
-                "email": {
-                    "type": "string"
-                },
-                "password": {
-                    "type": "string"
-                }
-
-            }
-
-        },
-        "loginResponse":{
-            "type": "object",
-            "properties": {
-                "data": {
-                    "type": "object",
-                    "properties":{
-                        "id":{
-                            "type":"integer"
-                        },
-                        "name":{
-                            "type":"string"
-                        },
-                        "created_at":{
-                            "type":"string"
-                        },
-                        "updated_at":{
-                            "type":"string"
-                        },
-                        "token":{
-                            "type":"string"
-                        }
-                    }
-                },
-                "error":{
-                 "type":"boolean"
-                },
-                "message": {
-                    "type": "string"
-                }
-            }
-        },
-        "countriesResponse":{
-            "type": "object",
-            "properties": {
-                "data": {
-                    "type": "object",
-                    "properties":{
-                       
-                        "name":{
-                            "type":"string"
-                        },
-                        "topLevelDomain":{
-                            "type":"array"
-                    
-                        }
-                    }
-                },
-                "error":{
-                 "type":"boolean"
-                },
-                "message": {
-                    "type": "string"
-                }
-            }
-        }
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }
+  },
+  "schemes": ["http"],
+  "host": "localhost:3002",
+  "basePath": "/api",
+  "paths": {
+    "/register": {
+      "post": {
+        "summary": "register a new user",
+        "description": "register a new user",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "task object",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/register"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+
+              "$ref": "#/definitions/registerResponse"
+            }
+          },
+          "403": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "summary": "login user",
+        "description": "login user",
+        "produces": ["application/json"],
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "login object",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/login"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+
+              "$ref": "#/definitions/loginResponse"
+            }
+          },
+          "403": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          }
+        }
+      }
+    },
+    "/countries": {
+      "put": {
+        "summary": "Get countries",
+        "description": "Get countries",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "$ref": "#/definitions/countriesResponse"
+            }
+          },
+          "400": {
+            "description": "Invalid status value",
+            "schema": {
+              "$ref": "#/definitions/InvalidResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "InvalidResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "string",
+          "nullable": "true"
+        },
+        "error": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "register": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "registerResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          }
+        },
+        "error": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "login": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "loginResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            },
+            "token": {
+              "type": "string"
+            }
+          }
+        },
+        "error": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "countriesResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "topLevelDomain": {
+              "type": "array"
+            }
+          }
+        },
+        "error": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  }
 }
