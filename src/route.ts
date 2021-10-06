@@ -8,8 +8,8 @@ import { app } from "src";
 const router = express.Router();
 
 const limiter = rateLimit({
-  windowMs: 60 * 1000, // 30 secs window time
-  max: 10, // limit each token to 10 requests per windowMs
+  windowMs: 60 * 1000, // 60 secs window time
+  max: 30, // limit each token to 30 requests per windowMs
   keyGenerator: function (req /*, res*/) {
     return req.headers["authorization"];
   },
