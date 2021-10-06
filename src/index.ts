@@ -28,4 +28,4 @@ app.use('/api/docs', swaggerUi.serve,
             swaggerUi.setup(swaggerDocument, null, null, null));
 
 // run app
-app.listen(3000);
+app.listen(process.env.PORT);
