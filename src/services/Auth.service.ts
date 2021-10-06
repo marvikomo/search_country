@@ -18,7 +18,7 @@ export class AuthService {
   }
 
 
-  public static checkIfEmailExists = async (email) => {
+  public static checkIfEmailExists = async (email: string) => {
     const AuthRepository = getManager().getRepository(User);
     return  await AuthRepository.findOne({email});
   }

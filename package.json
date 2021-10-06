@@ -65,7 +65,8 @@
     "typeorm": "^0.2.0"
   },
   "scripts": {
-    "start": "tsc && node dist/index.js",
+    "start": "node dist/index.js",
+    "postinstall": "tsc",
     "test": "tsc && ./node_modules/mocha/bin/mocha  --require ts-node/register './dist/test/integration/**/*.test.js' --timeout 90000 --exit"
   }
 }
