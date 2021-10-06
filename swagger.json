@@ -88,7 +88,7 @@
       }
     },
     "/countries": {
-      "put": {
+      "GET": {
         "summary": "Get countries",
         "description": "Get countries",
         "produces": ["application/json"],
